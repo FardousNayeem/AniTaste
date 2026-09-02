@@ -1,0 +1,8 @@
+# Build only: harvesting the corpus and fitting the model.
+#
+# Serving needs none of this. `anitaste train` writes a JSON artifact that the
+# API reads with the standard library alone — keep it that way, so a deploy
+# does not carry a linear algebra stack to serve dot products.
+-r requirements.txt
+numpy==2.5.2
+requests==2.34.2

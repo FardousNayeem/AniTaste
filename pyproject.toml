@@ -1,0 +1,23 @@
+[project]
+name = "anitaste"
+version = "1.0.0"
+description = "Anime recommendations from a model trained on the community recommendation graph."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Serving the HTTP API.
+api = ["fastapi>=0.115", "uvicorn[standard]>=0.30"]
+# Harvesting a corpus and fitting a model.
+train = ["numpy>=2.0", "requests>=2.31"]
+
+[project.scripts]
+anitaste = "anitaste.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["anitaste", "anitaste.ml"]
