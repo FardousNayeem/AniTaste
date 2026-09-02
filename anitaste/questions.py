@@ -133,7 +133,7 @@ QUESTIONS: tuple[Question, ...] = (
         options=(
             Option(
                 value="light",
-                label="Light — I want to switch off",
+                label="Light - I want to switch off",
                 icon="ph-feather",
                 terms={
                     "tag:episodic": 0.6,
@@ -150,7 +150,7 @@ QUESTIONS: tuple[Question, ...] = (
             ),
             Option(
                 value="heavy",
-                label="Heavy — I want to feel something",
+                label="Heavy - I want to feel something",
                 icon="ph-anchor",
                 terms={
                     "genre:drama": 0.6,
