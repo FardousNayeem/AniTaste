@@ -76,7 +76,7 @@ class Ask:
     text: str = ""
     # Titles the caller already knows about, by AniList id.
     exclude: frozenset[int] = frozenset()
-    limit: int = 6
+    limit: int = 9
 
 
 def build_query(ask: Ask, model: TasteModel) -> Query:
