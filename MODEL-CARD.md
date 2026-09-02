@@ -1,4 +1,4 @@
-# anitaste — model card
+# AniTaste — model card
 
 What the "What should I watch?" widget is, what it learned from, how it
 learned it, and what it cannot do. Written to be read by somebody who has to
@@ -154,7 +154,7 @@ ordering the top ten is the entire job. Tune against
 ## 5. How well it works
 
 All figures are on **held-out data the model never saw**, printed by
-`anitaste train` and stored in the artifact under `metrics`.
+`AniTaste train` and stored in the artifact under `metrics`.
 
 | Metric | Value | Random baseline |
 | --- | --- | --- |
@@ -327,12 +327,12 @@ one we do not carry until you train again.
 
 | Path | What |
 | --- | --- |
-| `anitaste/ml/harvest.py` | Downloads the corpus. Decides nothing. |
-| `anitaste/ml/train.py` | Both training stages and the evaluation |
-| `anitaste/ml/export.py` | Quantises and writes the artifact |
-| `anitaste/model.py` | Loads it and scores a request. No numpy. |
-| `anitaste/recommend.py` | The public API: validation and presentation |
-| `anitaste/questions.py` | The questionnaire, and what each answer means |
-| `anitaste/text.py` | Tokenising, synonyms and negation |
+| `anitase/ml/harvest.py` | Downloads the corpus. Decides nothing. |
+| `anitase/ml/train.py` | Both training stages and the evaluation |
+| `anitase/ml/export.py` | Quantises and writes the artifact |
+| `anitase/model.py` | Loads it and scores a request. No numpy. |
+| `anitase/recommend.py` | The public API: validation and presentation |
+| `anitase/questions.py` | The questionnaire, and what each answer means |
+| `anitase/text.py` | Tokenising, synonyms and negation |
 | `api/server.py` | The HTTP surface |
 | `tests/` | Scoring tests always run; training tests need numpy |
