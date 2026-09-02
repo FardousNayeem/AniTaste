@@ -1,13 +1,5 @@
 "use client";
 
-/**
- * The whole client: one question at a time, then results.
- *
- * The questions are not defined here. They come from the API, which reads
- * them from the same file the scorer uses, so this cannot ask something the
- * model has never heard of.
- */
-
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   fetchQuestions,
@@ -62,7 +54,6 @@ export default function Flow() {
           text: freeText,
           exclude,
         });
-        // An answer that lands instantly reads as canned.
         const elapsed = Date.now() - started;
         if (elapsed < 420) await new Promise((r) => setTimeout(r, 420 - elapsed));
         setResults(found);
@@ -115,8 +106,6 @@ export default function Flow() {
   };
 
   const more = () => {
-    // Everything already shown is excluded, so "show me others" genuinely
-    // returns others rather than the same ranking again.
     const exclude = [...seen, ...results.map((item) => item.id)];
     setSeen(exclude);
     void ask(answers, text, exclude);
@@ -126,8 +115,6 @@ export default function Flow() {
     event.preventDefault();
     const trimmed = text.trim();
     if (!trimmed) return;
-    // A typed sentence is a complete request on its own. It goes with
-    // whatever has been answered so far and ends the round.
     void ask(answers, trimmed);
   };
 
@@ -136,10 +123,10 @@ export default function Flow() {
   return (
     <main className="shell">
       <header className="masthead">
-        <div className="wordmark">
+        <button type="button" className="wordmark" onClick={restart} aria-label="Go home">
           <i className="dot" aria-hidden="true" />
           AniTaste
-        </div>
+        </button>
         {titles > 0 && (
           <p className="masthead__meta">{trained} titles · Trained on taste</p>
         )}
@@ -203,7 +190,7 @@ export default function Flow() {
                 </div>
 
                 {question.multiple && (
-                  <div className="row">
+                  <div className="row submit-row">
                     <button
                       type="button"
                       className="btn"
@@ -214,7 +201,7 @@ export default function Flow() {
                         ? `That's me (${picked.length})`
                         : question.optional
                           ? "Nothing to avoid"
-                          : "Pick atleast one"}
+                          : "Pick at least one"}
                     </button>
                     {step > 0 && (
                       <button type="button" className="btn btn--quiet" onClick={restart}>
@@ -243,7 +230,7 @@ export default function Flow() {
                 maxLength={300}
                 autoComplete="off"
               />
-              <button type="submit" className="btn" disabled={!text.trim()}>
+              <button type="submit" className="btn btn--action" disabled={!text.trim()}>
                 Ask
               </button>
             </div>
