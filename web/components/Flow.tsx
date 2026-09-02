@@ -138,7 +138,7 @@ export default function Flow() {
       <header className="masthead">
         <div className="wordmark">
           <i className="dot" aria-hidden="true" />
-          Ani<span>Taste</span>
+          AniTaste
         </div>
         {titles > 0 && (
           <p className="masthead__meta">{trained} titles · Trained on taste</p>
@@ -214,7 +214,7 @@ export default function Flow() {
                         ? `That's me (${picked.length})`
                         : question.optional
                           ? "Nothing to avoid"
-                          : "Pick at least one"}
+                          : "Pick atleast one"}
                     </button>
                     {step > 0 && (
                       <button type="button" className="btn btn--quiet" onClick={restart}>
@@ -228,7 +228,7 @@ export default function Flow() {
 
             {error && <p className="notice notice--warn" style={{ marginTop: "1.5rem" }}>{error}</p>}
           </div>
-
+            
           <form className="compose" onSubmit={submitText}>
             <label className="compose__label" htmlFor="wish">
               In a hurry? Describe it, or name an anime you liked.

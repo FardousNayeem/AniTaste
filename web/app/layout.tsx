@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AniTaste — what should I watch?",
+  title: "AniTaste - what should I watch?",
   description:
     "Anime recommendations from a model trained on the community recommendation graph.",
 };

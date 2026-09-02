@@ -1,10 +1,3 @@
-/* =========================================================================
-   anitaste — one palette, one type scale, one radius scale.
-
-   Committed dark: this is a thing you use in the evening to decide what to
-   watch, and there is no light variant to drift out of sync with.
-   ========================================================================= */
-
 :root {
   color-scheme: dark;
 
