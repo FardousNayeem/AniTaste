@@ -17,6 +17,23 @@ $ AniTaste ask "something like Cowboy Bebop"
 Not a language model, and not a wrapper around somebody's recommendation API.
 The model is trained here, from scratch, and ships as a 3 MB file.
 
+## Screenshots
+
+![Six picks after answering the questions, each with the reason it was chosen](docs/screenshots/results.webp)
+
+<sub>Six picks after answering the questions, each with the reason it was chosen</sub>
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/question-mood.webp" alt="First question: pick up to two moods" width="100%"><br><sub>First question: pick up to two moods</sub></td>
+    <td width="50%"><img src="docs/screenshots/question-time.webp" alt="Third question: how much time you have" width="100%"><br><sub>Third question: how much time you have</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/text-search.webp" alt="Skip the questions and type a sentence instead" width="100%"><br><sub>Skip the questions and type a sentence instead</sub></td>
+    <td width="50%"><img src="docs/screenshots/results-from-text.webp" alt="Results for &quot;something like Cowboy Bebop&quot;" width="100%"><br><sub>Results for &quot;something like Cowboy Bebop&quot;</sub></td>
+  </tr>
+</table>
+
 ---
 
 ## What is in the box
